@@ -5,9 +5,8 @@ import DisplayIngredient from "./DisplayIngredient";
 
 const Display = ({ results, ingredient }) => {
     if (results.drinks !== undefined) {
-        console.log("here");
         const { drinks } = results;
-        results.drinks = undefined;
+        console.log(drinks);
         if (drinks) {
             return <DisplayResult drinks={drinks} />;
         }
@@ -32,7 +31,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(
-    mapStateToProps,
-    null
-)(Display);
+export default connect(mapStateToProps, null)(Display);

@@ -8,14 +8,18 @@ import Paper from "@material-ui/core/Paper";
 
 export default function DisplayResult({ drinks }) {
     const returnIngredients = drink => {
-        let ind = 0;
+        let ind = 1;
         let str = "";
-        while (drink["strIngredient" + ++ind] !== "") {
-            if (drink["strMeasure" + ind] !== "") {
+        while (drink["strIngredient" + ind] != null) {
+            console.log(drink["strIngredient" + ind]);
+
+            if (drink["strMeasure" + ind] != null) {
                 str = str + " " + drink["strMeasure" + ind];
                 str = str + drink["strIngredient" + ind] + ",";
             } else str = str + drink["strIngredient" + ind];
+            ind++;
         }
+        console.log(str.substring(0, str.length - 1));
         return str.substring(0, str.length - 1);
     };
     return (
