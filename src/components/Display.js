@@ -6,14 +6,12 @@ import DisplayIngredient from "./DisplayIngredient";
 const Display = ({ results, ingredient }) => {
     if (results.drinks !== undefined) {
         const { drinks } = results;
-        console.log(drinks);
         if (drinks) {
             return <DisplayResult drinks={drinks} />;
         }
         return <div>Couldn't find that!</div>;
     } else if (ingredient.ingredients !== undefined) {
         const ingredients = ingredient.ingredients;
-        console.log("here");
         ingredient = undefined;
         if (ingredients) {
             console.log(ingredients);
