@@ -20,7 +20,9 @@ class SearchBar extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({ searchType: e.target.value });
+    if (e.target.id === "search-value")
+      this.setState({ searchValue: e.target.value });
+    else this.setState({ searchType: e.target.value });
   };
   handleSubmit = (e) => {
     e.preventDefault();
